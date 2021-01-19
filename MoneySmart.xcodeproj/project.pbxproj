@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402A662A25B7019900BAA486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402A662925B7019900BAA486 /* LaunchScreen.storyboard */; };
+		402A663025B7029A00BAA486 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 402A662F25B7029A00BAA486 /* moneysmartround.png */; };
+		402A663425B7060400BAA486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663325B7060400BAA486 /* HomeViewController.swift */; };
+		402A663725B7066400BAA486 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663625B7066400BAA486 /* AnalysisViewController.swift */; };
+		402A663B25B706B700BAA486 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663A25B706B700BAA486 /* GoalsViewController.swift */; };
+		402A663E25B706D400BAA486 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663D25B706D400BAA486 /* SettingViewController.swift */; };
+		402A664125B7073900BAA486 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A664025B7073900BAA486 /* Transaction.swift */; };
+		402A664825B7139400BAA486 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A664725B7139400BAA486 /* HistoryTableViewController.swift */; };
+		402A664B25B714F300BAA486 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A664A25B714F300BAA486 /* CustomTableViewCell.swift */; };
 		40BB5D5125B681F1008E1A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5025B681F1008E1A0C /* AppDelegate.swift */; };
 		40BB5D5325B681F1008E1A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */; };
 		40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5425B681F1008E1A0C /* ViewController.swift */; };
@@ -17,6 +26,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		402A662925B7019900BAA486 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		402A662F25B7029A00BAA486 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneysmartround.png; sourceTree = "<group>"; };
+		402A663325B7060400BAA486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		402A663625B7066400BAA486 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		402A663A25B706B700BAA486 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		402A663D25B706D400BAA486 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		402A664025B7073900BAA486 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		402A664725B7139400BAA486 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		402A664A25B714F300BAA486 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		40BB5D4D25B681F1008E1A0C /* MoneySmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneySmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BB5D5025B681F1008E1A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +80,19 @@
 				40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */,
 				40BB5D5425B681F1008E1A0C /* ViewController.swift */,
 				40BB5D5625B681F1008E1A0C /* Main.storyboard */,
+				402A664725B7139400BAA486 /* HistoryTableViewController.swift */,
+				402A664025B7073900BAA486 /* Transaction.swift */,
+				402A663D25B706D400BAA486 /* SettingViewController.swift */,
+				402A663A25B706B700BAA486 /* GoalsViewController.swift */,
+				402A663625B7066400BAA486 /* AnalysisViewController.swift */,
+				402A663325B7060400BAA486 /* HomeViewController.swift */,
+				402A664A25B714F300BAA486 /* CustomTableViewCell.swift */,
+				402A662925B7019900BAA486 /* LaunchScreen.storyboard */,
 				40BB5D5C25B681F2008E1A0C /* Assets.xcassets */,
 				40BB5D5E25B681F2008E1A0C /* LaunchScreen.storyboard */,
 				40BB5D6125B681F2008E1A0C /* Info.plist */,
 				40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */,
+				402A662F25B7029A00BAA486 /* moneysmartround.png */,
 			);
 			path = MoneySmart;
 			sourceTree = "<group>";
@@ -127,7 +154,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402A663025B7029A00BAA486 /* moneysmartround.png in Resources */,
 				40BB5D6025B681F2008E1A0C /* LaunchScreen.storyboard in Resources */,
+				402A662A25B7019900BAA486 /* LaunchScreen.storyboard in Resources */,
 				40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */,
 				40BB5D5825B681F1008E1A0C /* Main.storyboard in Resources */,
 			);
@@ -140,10 +169,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402A663B25B706B700BAA486 /* GoalsViewController.swift in Sources */,
+				402A663425B7060400BAA486 /* HomeViewController.swift in Sources */,
+				402A664B25B714F300BAA486 /* CustomTableViewCell.swift in Sources */,
 				40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */,
+				402A663E25B706D400BAA486 /* SettingViewController.swift in Sources */,
+				402A664825B7139400BAA486 /* HistoryTableViewController.swift in Sources */,
 				40BB5D5125B681F1008E1A0C /* AppDelegate.swift in Sources */,
+				402A663725B7066400BAA486 /* AnalysisViewController.swift in Sources */,
 				40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */,
 				40BB5D5325B681F1008E1A0C /* SceneDelegate.swift in Sources */,
+				402A664125B7073900BAA486 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
