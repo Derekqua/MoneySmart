@@ -1,24 +1,21 @@
 //
-//  HomeViewController.swift
+//  OcrViewController.swift
 //  MoneySmart
 //
-//  Created by Derek Qua on 19/1/21.
+//  Created by Derek Qua on 20/1/21.
 //
 
 import Foundation
 import UIKit
 
-class HomeViewController: UIViewController {
+class OcrViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        tabBarController?.parent?.tabBarController?.tabBar.isHidden = true
     }
 
-    @IBOutlet weak var balanceText: UILabel!
-    
-    
-    
 
 }

@@ -6,12 +6,12 @@
     <entity name="CD_Transaction" representedClassName="CD_Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="cd_datetime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="cd_image" optional="YES" attributeType="Binary"/>
-        <attribute name="cd_name" optional="YES" attributeType="String"/>
+        <attribute name="cd_notes" optional="YES" attributeType="String"/>
         <attribute name="cd_price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="cd_title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CD_Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="CD_Balance" positionX="-54" positionY="27" width="128" height="58"/>
+        <element name="CD_Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
