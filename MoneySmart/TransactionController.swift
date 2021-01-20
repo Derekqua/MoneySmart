@@ -64,9 +64,11 @@ class TransactionController {
                 let title = c.value(forKey: "cd_title") as? String
                 let notes = c.value(forKey: "cd_notes") as? String
                 let price = c.value(forKey: "cd_price") as? Double
-                let image = c.value(forKey: "cd_image") as? UIImage
+                let image = c.value(forKey: "cd_image")
                 
-                let t1 = Transaction(image: image!, title: title!, notes: notes!, price: price!, datetime: datetime!)
+                let newimage = UIImage(data: image as! Data)
+                
+                let t1 = Transaction(image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!)
                 hList.append(t1)
             }
             try context.save()
@@ -89,7 +91,8 @@ class TransactionController {
         transaction.setValue(t.notes, forKey: "cd_notes")
         transaction.setValue(t.datetime, forKey: "cd_datetime")
         transaction.setValue(t.price, forKey: "cd_price")
-        transaction.setValue(t.image, forKey: "cd_image")
+        var imageData = t.image.pngData();
+        transaction.setValue(imageData, forKey: "cd_image")
         
         do{
             try context.save()

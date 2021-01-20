@@ -39,11 +39,33 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
     
 
     @IBOutlet weak var categoryField: UITextField!
+    
+    @IBOutlet weak var notestxt: UITextField!
+    @IBOutlet weak var pricetxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
 
-  
+    @IBAction func submitbtn(_ sender: Any)
+    {
+        var i = 0
+        for d in textArray
+        {
+            i = i + 1
+            if d == categoryField.text
+            {
+                break
+            }
+        }
+        var price = Double(pricetxt.text!)
+        
+        
+        
+        let transaction = Transaction(image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date())
+        let controller = TransactionController()
+        controller.AddTransactionData(t: transaction)
+    }
+    
 }
