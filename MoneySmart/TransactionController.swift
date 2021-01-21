@@ -51,6 +51,7 @@ class TransactionController {
     func FetchTransactionData()->[Transaction]? {
         var hList:[Transaction] = []
         var transaction:[NSManagedObject] = []
+        print("test")
         
         //fetch all data in the Core Data and convert the data to hlist
         
