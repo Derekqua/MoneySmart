@@ -15,13 +15,15 @@ class Transaction {
     var notes: String
     var price: Double
     var datetime:Date
+    var type: String
     
-    init(image:UIImage, title:String, notes:String, price:Double, datetime:Date) {
+    init(image:UIImage, title:String, notes:String, price:Double, datetime:Date, type:String) {
         self.image = image
         self.title = title
         self.notes = notes
         self.price = price
         self.datetime = datetime
+        self.type = type
     }
     
 }

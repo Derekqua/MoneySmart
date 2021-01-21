@@ -65,11 +65,12 @@ class TransactionController {
                 let title = c.value(forKey: "cd_title") as? String
                 let notes = c.value(forKey: "cd_notes") as? String
                 let price = c.value(forKey: "cd_price") as? Double
+                let type = c.value(forKey: "cd_type") as? String
                 let image = c.value(forKey: "cd_image")
                 
                 let newimage = UIImage(data: image as! Data)
                 
-                let t1 = Transaction(image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!)
+                let t1 = Transaction(image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
                 hList.append(t1)
             }
             try context.save()
@@ -92,8 +93,9 @@ class TransactionController {
         transaction.setValue(t.notes, forKey: "cd_notes")
         transaction.setValue(t.datetime, forKey: "cd_datetime")
         transaction.setValue(t.price, forKey: "cd_price")
-        var imageData = t.image.pngData();
+        let imageData = t.image.pngData();
         transaction.setValue(imageData, forKey: "cd_image")
+        transaction.setValue(t.type, forKey: "cd_type")
         
         do{
             try context.save()
@@ -114,6 +116,30 @@ class TransactionController {
             
             let objecToDelete = result[0] as! NSManagedObject
             context.delete(objecToDelete)
+            
+            do {
+                try context.save()
+            } catch  {
+                print(error)
+            }
+            
+        } catch  {
+            print(error)
+        }
+    }
+    
+    func DeleteAllTransaction(){
+        
+        var transaction:[NSManagedObject] = []
+
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Transaction")
+        
+        do{
+            transaction = try context.fetch(fetchRequest)
+            
+            for i in transaction{
+                context.delete(i)
+            }
             
             do {
                 try context.save()

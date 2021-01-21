@@ -2,7 +2,7 @@
 //  HistoryTableViewController.swift
 //  MoneySmart
 //
-//  Created by Derek Qua on 19/1/21.
+//  Created by Derek Qua on 21/1/21.
 //
 
 import Foundation
@@ -58,10 +58,8 @@ class HistoryTableViewController:UITableViewController{
         let r = safeList[indexPath.row]
         cell.textLabel!.text = "\(r.mainvenue), \(r.minorvenue)"
         
-
         // Date Now
         let date:Date = r.datetime
-
         let dateFormatter = DateFormatter() // set to local date (Singapore)
         dateFormatter.locale = Locale(identifier: "en_SG") // set desired format, note a is AM and FM format
         dateFormatter.dateFormat = "d MMM yyyy h:mm a" // convert date to String
@@ -84,4 +82,3 @@ class HistoryTableViewController:UITableViewController{
          
     }
 }
-

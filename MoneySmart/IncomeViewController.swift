@@ -37,35 +37,74 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
         categoryField.text = textArray[indexPath.row]
     }
     
-
-    @IBOutlet weak var categoryField: UITextField!
-    
-    @IBOutlet weak var notestxt: UITextField!
-    @IBOutlet weak var pricetxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
     }
 
+    @IBOutlet weak var categoryField: UITextField!
+    @IBOutlet weak var notestxt: UITextField!
+    @IBOutlet weak var pricetxt: UITextField!
+    
+    @IBAction func cancelbtn(_ sender: Any) {
+        //return back to Home viewController
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func submitbtn(_ sender: Any)
     {
-        var i = 0
-        for d in textArray
-        {
-            i = i + 1
-            if d == categoryField.text
-            {
-                break
-            }
+        //check if textfield empty
+        if pricetxt.text!.isEmpty || notestxt.text!.isEmpty || categoryField.text!.isEmpty{
+            alert("Please fill up the following details")
         }
-        var price = Double(pricetxt.text!)
+        else{
+            var i = 0
+            
+            //To find index of category in array
+            for d in textArray
+            {
+                i += 1
+                if d == categoryField.text
+                {
+                    break // var i will stop increasing
+                }
+            }
+            
+            let price = Double(pricetxt.text!)
+            
+            //check if price is digit not string
+            if price == nil{
+                alert("Invalid Price, Please Try Again")
+                pricetxt.text = ""
+                
+            }
+            else{
+                //Creating Transaction Object & add into core data
+                let transaction = Transaction(image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
+                let controller = TransactionController()
+                controller.AddTransactionData(t: transaction)
+                
+                //return back to Home viewController
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+            
+        }
+       
         
         
-        
-        let transaction = Transaction(image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date())
-        let controller = TransactionController()
-        controller.AddTransactionData(t: transaction)
     }
+    
+    //Alert message
+    func alert(_ message:String){
+            print("Alert: \(message)")
+            let alert = UIAlertController(title: "Empty field", message: message, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Noted", style: UIAlertAction.Style.default){_ in
+                self.dismiss(animated: true, completion: nil)
+            })
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
     
 }

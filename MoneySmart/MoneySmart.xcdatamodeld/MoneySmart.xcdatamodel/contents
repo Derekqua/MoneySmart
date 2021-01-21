@@ -9,9 +9,10 @@
         <attribute name="cd_notes" optional="YES" attributeType="String"/>
         <attribute name="cd_price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="cd_title" optional="YES" attributeType="String"/>
+        <attribute name="cd_type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="CD_Balance" positionX="-54" positionY="27" width="128" height="58"/>
-        <element name="CD_Transaction" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="CD_Transaction" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>
