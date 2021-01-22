@@ -109,7 +109,7 @@ class TransactionController {
     func DeleteTransaction(notes:String){
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Transaction")
-        fetchRequest.predicate = NSPredicate(format: "cd_notes = %@", notes)
+        fetchRequest.predicate = NSPredicate(format: "cd_notes == %@", notes)
         
         do {
             let result = try context.fetch(fetchRequest)

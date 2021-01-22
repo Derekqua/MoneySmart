@@ -10,6 +10,8 @@ import UIKit
 
 class TransactionDetailsViewController: UIViewController {
 
+    let controller = TransactionController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +32,11 @@ class TransactionDetailsViewController: UIViewController {
     @IBOutlet weak var priceTxt: UILabel!
     @IBOutlet weak var dateTxt: UILabel!
     @IBOutlet weak var nameTxt: UILabel!
+    @IBAction func deleteBtn(_ sender: Any) {
+        controller.DeleteTransaction(notes: tNotes)
+        //return back to Home viewController
+        self.navigationController?.popViewController(animated: true)
+    }
     
     var tImage = UIImage()
     var tNotes = ""

@@ -48,8 +48,7 @@ class HomeViewController: UIViewController{
     
     
     @IBOutlet weak var viewtbl: UITableView!
-    @IBOutlet weak var balanceText: UILabel!
-    
+    @IBOutlet weak var balanceText: UILabel!    
     
     
 
@@ -61,13 +60,26 @@ extension HomeViewController: UITableViewDelegate
         let obj = tList[indexPath.row]
         vc?.tImage = obj.image
         vc?.tNotes = obj.notes
-        //vc?.tDate = obj.datetime
         vc?.tTitle = obj.title
         vc?.tPrice = String(obj.price)
         vc?.type = obj.type
         
-
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        let date:Date = obj.datetime
+         
+        // British English Locale (en_GB)
+        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd") // // set template after setting locale
+        let newDate = dateFormatter.string(from: date) // 31 December
+        
+        vc?.tDate = newDate
+        
         self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
 extension HomeViewController: UITableViewDataSource
@@ -89,7 +101,17 @@ extension HomeViewController: UITableViewDataSource
         cell.title?.text = tObj.title
         cell.notes?.text = tObj.notes
         cell.price?.text = String(tObj.price)
-        cell.date?.text = "Testing"
+        
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        let date:Date = tObj.datetime
+         
+        // British English Locale (en_GB)
+        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd") // // set template after setting locale
+        let newDate = dateFormatter.string(from: date) // 31 December
+        
+        cell.date?.text = newDate
         
         return cell
     }
