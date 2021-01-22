@@ -75,8 +75,11 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
             }
             else{
                 //Creating Transaction Object & add into core data
-                let transaction = Transaction(image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Expenses")
                 let controller = TransactionController()
+                let tlist = controller.FetchTransactionData()
+                var id = tlist!.count + 1
+                let transaction = Transaction(id: id, image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Expenses")
+                
                 controller.AddTransactionData(t: transaction)
                 
                 //return back to Home viewController

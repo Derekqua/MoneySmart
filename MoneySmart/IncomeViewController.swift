@@ -80,9 +80,20 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
             }
             else{
                 //Creating Transaction Object & add into core data
-                let transaction = Transaction(image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
                 let controller = TransactionController()
+                let tlist = controller.FetchTransactionData()
+                var id = 1
+                if (tlist?.count != nil)
+                {
+                    id = tlist!.count + 1
+                }
+                else
+                {
+                    id = 1
+                }
+                let transaction = Transaction(id: id, image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
                 controller.AddTransactionData(t: transaction)
+                print(id)
                 
                 //return back to Home viewController
                 self.navigationController?.popViewController(animated: true)

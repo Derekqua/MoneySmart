@@ -61,6 +61,7 @@ class TransactionController {
             transaction = try context.fetch(fetchRequest)
             
             for c in transaction{
+                let id = c.value(forKey: "cd_id") as? Int
                 let datetime = c.value(forKey: "cd_datetime") as? Date
                 let title = c.value(forKey: "cd_title") as? String
                 let notes = c.value(forKey: "cd_notes") as? String
@@ -70,7 +71,7 @@ class TransactionController {
                 
                 let newimage = UIImage(data: image as! Data)
                 
-                let t1 = Transaction(image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
+                let t1 = Transaction(id: id!, image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
                 hList.append(t1)
             }
             try context.save()
@@ -89,6 +90,7 @@ class TransactionController {
         let entity = NSEntityDescription.entity(forEntityName: "CD_Transaction", in: context)!
         
         let transaction = NSManagedObject(entity: entity, insertInto: context)
+        transaction.setValue(t.id, forKey: "cd_id")
         transaction.setValue(t.title, forKey: "cd_title")
         transaction.setValue(t.notes, forKey: "cd_notes")
         transaction.setValue(t.datetime, forKey: "cd_datetime")
@@ -106,10 +108,10 @@ class TransactionController {
         
     }
     
-    func DeleteTransaction(notes:String){
+    func DeleteTransaction(id:String){
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Transaction")
-        fetchRequest.predicate = NSPredicate(format: "cd_notes == %@", notes)
+        fetchRequest.predicate = NSPredicate(format: "cd_id == %@", id)
         
         do {
             let result = try context.fetch(fetchRequest)

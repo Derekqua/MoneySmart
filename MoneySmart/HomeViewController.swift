@@ -58,6 +58,7 @@ extension HomeViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "TransactionDetailsViewController") as? TransactionDetailsViewController
         let obj = tList[indexPath.row]
+        vc?.tid = String(obj.id)
         vc?.tImage = obj.image
         vc?.tNotes = obj.notes
         vc?.tTitle = obj.title

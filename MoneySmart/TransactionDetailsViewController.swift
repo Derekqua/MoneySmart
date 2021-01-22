@@ -33,11 +33,12 @@ class TransactionDetailsViewController: UIViewController {
     @IBOutlet weak var dateTxt: UILabel!
     @IBOutlet weak var nameTxt: UILabel!
     @IBAction func deleteBtn(_ sender: Any) {
-        controller.DeleteTransaction(notes: tNotes)
+        controller.DeleteTransaction(id: tid)
         //return back to Home viewController
         self.navigationController?.popViewController(animated: true)
     }
     
+    var tid = ""
     var tImage = UIImage()
     var tNotes = ""
     var tTitle = ""
