@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11655593E3DD67FF0E1FBC22 /* Pods_MoneySmart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526E6FDB99EAC7A91FF37DE7 /* Pods_MoneySmart.framework */; };
 		4001808925B7EB1500501B64 /* clothing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4001808025B7EB1400501B64 /* clothing.png */; };
 		4001808A25B7EB1500501B64 /* category.png in Resources */ = {isa = PBXBuildFile; fileRef = 4001808125B7EB1400501B64 /* category.png */; };
 		4001808B25B7EB1500501B64 /* deadline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4001808225B7EB1400501B64 /* deadline.png */; };
@@ -42,7 +43,7 @@
 		40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5425B681F1008E1A0C /* ViewController.swift */; };
 		40BB5D5825B681F1008E1A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5625B681F1008E1A0C /* Main.storyboard */; };
 		40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */; };
-		40BB5D5D25B681F2008E1A0C /* pencil.png.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */; };
+		40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +83,11 @@
 		40BB5D5425B681F1008E1A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40BB5D5725B681F1008E1A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40BB5D5A25B681F1008E1A0C /* MoneySmart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneySmart.xcdatamodel; sourceTree = "<group>"; };
-		40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pencil.png.xcassets; sourceTree = "<group>"; };
+		40BB5D5C25B681F2008E1A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40BB5D6125B681F2008E1A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526E6FDB99EAC7A91FF37DE7 /* Pods_MoneySmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneySmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.debug.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.debug.xcconfig"; sourceTree = "<group>"; };
+		912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.release.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,12 +95,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11655593E3DD67FF0E1FBC22 /* Pods_MoneySmart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F4621064041629FF1E0E849 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				526E6FDB99EAC7A91FF37DE7 /* Pods_MoneySmart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4038EC6F25B7E5200039034C /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,8 @@
 				4038EC6F25B7E5200039034C /* Images */,
 				40BB5D4F25B681F1008E1A0C /* MoneySmart */,
 				40BB5D4E25B681F1008E1A0C /* Products */,
+				812B2307AD0CCEC4184A1263 /* Pods */,
+				3F4621064041629FF1E0E849 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,13 +171,23 @@
 				402A663325B7060400BAA486 /* HomeViewController.swift */,
 				402A664A25B714F300BAA486 /* CustomTableViewCell.swift */,
 				402A662925B7019900BAA486 /* LaunchScreen.storyboard */,
-				40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */,
+				40BB5D5C25B681F2008E1A0C /* Assets.xcassets */,
 				40BB5D6125B681F2008E1A0C /* Info.plist */,
 				40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */,
 				4038EC6725B7D5F60039034C /* TransactionController.swift */,
 				400180BA25B9942900501B64 /* HistoryTableViewController.swift */,
 			);
 			path = MoneySmart;
+			sourceTree = "<group>";
+		};
+		812B2307AD0CCEC4184A1263 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */,
+				912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40BB5D6425B681F2008E1A0C /* Build configuration list for PBXNativeTarget "MoneySmart" */;
 			buildPhases = (
+				FBAC22F34F58C0D9F4892941 /* [CP] Check Pods Manifest.lock */,
 				40BB5D4925B681F1008E1A0C /* Sources */,
 				40BB5D4A25B681F1008E1A0C /* Frameworks */,
 				40BB5D4B25B681F1008E1A0C /* Resources */,
+				F007A9D7AEE69DB9A2FDD8DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,7 +261,7 @@
 				4001808E25B7EB1500501B64 /* transport.png in Resources */,
 				4001808C25B7EB1500501B64 /* utilities.png in Resources */,
 				400180C425B9A4CD00501B64 /* HomeTableViewCell.xib in Resources */,
-				40BB5D5D25B681F2008E1A0C /* pencil.png.xcassets in Resources */,
+				40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */,
 				4001808925B7EB1500501B64 /* clothing.png in Resources */,
 				4001808F25B7EB1500501B64 /* entertainment.png in Resources */,
 				4001809125B7EB1500501B64 /* food.png in Resources */,
@@ -243,6 +270,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F007A9D7AEE69DB9A2FDD8DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneySmart/Pods-MoneySmart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneySmart/Pods-MoneySmart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneySmart/Pods-MoneySmart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBAC22F34F58C0D9F4892941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneySmart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40BB5D4925B681F1008E1A0C /* Sources */ = {
@@ -403,6 +472,7 @@
 		};
 		40BB5D6525B681F2008E1A0C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,6 +492,7 @@
 		};
 		40BB5D6625B681F2008E1A0C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -48,6 +48,20 @@ class HistoryTableViewController:UITableViewController, UISearchBarDelegate{
         }
     }
     
+    // Called when search bar obtains focus.  I.e., user taps
+    // on the search bar to enter text.
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchBar.showsCancelButton = false
+
+        // Remove focus from the search bar.
+        searchBar.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filterData = []
         tList = controller.FetchTransactionData()!

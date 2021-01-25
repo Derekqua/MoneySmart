@@ -1,29 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xj4-pk-4dA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xj4-pk-4dA">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Analysis View Controller-->
+        <!--Analysis-->
         <scene sceneID="2Ji-FA-WAD">
             <objects>
                 <viewController id="eOO-0j-bWm" customClass="AnalysisViewController" customModule="MoneySmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ods-PS-NMW">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W5t-Ao-N1O">
+                                <rect key="frame" x="0.0" y="88" width="390" height="60"/>
+                                <segments>
+                                    <segment title="Income"/>
+                                    <segment title="Expenses"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="1" green="0.69311894929999995" blue="0.1265175563" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="eOO-0j-bWm" eventType="valueChanged" id="Ygu-qK-ff8"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" id="jFa-gv-fJT" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="5" y="147" width="380" height="371"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <viewLayoutGuide key="safeArea" id="djw-Qt-mee"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="RGY-ys-9MH"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="jFa-gv-fJT" firstAttribute="top" secondItem="W5t-Ao-N1O" secondAttribute="bottom" constant="8" symbolic="YES" id="1dK-LI-Sb0"/>
+                            <constraint firstItem="W5t-Ao-N1O" firstAttribute="leading" secondItem="RGY-ys-9MH" secondAttribute="leading" id="6Q9-S0-ENf"/>
+                            <constraint firstItem="jFa-gv-fJT" firstAttribute="top" secondItem="W5t-Ao-N1O" secondAttribute="bottom" id="Cyl-Hs-0vC"/>
+                            <constraint firstItem="W5t-Ao-N1O" firstAttribute="trailing" secondItem="RGY-ys-9MH" secondAttribute="trailing" id="ZXX-5Y-Jgt"/>
+                            <constraint firstItem="W5t-Ao-N1O" firstAttribute="top" secondItem="RGY-ys-9MH" secondAttribute="top" id="mwg-69-yEC"/>
+                            <constraint firstItem="jFa-gv-fJT" firstAttribute="top" secondItem="W5t-Ao-N1O" secondAttribute="bottom" id="pFe-qy-8bn"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Te-Lx-ovY"/>
+                    <navigationItem key="navigationItem" title="Analysis" id="5Te-Lx-ovY"/>
+                    <connections>
+                        <outlet property="pieChart" destination="jFa-gv-fJT" id="HH8-Hc-44O"/>
+                        <outlet property="segmentedControl" destination="W5t-Ao-N1O" id="ckX-SH-WDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4y-kQ-nn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="494"/>
+            <point key="canvasLocation" x="1327.6923076923076" y="493.3649289099526"/>
         </scene>
         <!--Income-->
         <scene sceneID="UGT-UF-JZF">
@@ -34,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXK-3B-6MT">
-                                <rect key="frame" x="15" y="116" width="350" height="58"/>
+                                <rect key="frame" x="15" y="116" width="836" height="58"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
@@ -43,7 +74,7 @@
                                 <rect key="frame" x="10" y="205" width="45" height="45"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h8H-0u-aGF">
-                                <rect key="frame" x="63" y="210" width="302" height="39.666666666666657"/>
+                                <rect key="frame" x="63" y="210" width="788" height="39.666666666666657"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39.5" id="03d-YF-zrg"/>
@@ -59,7 +90,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1oc-Rx-3Mk">
-                                <rect key="frame" x="63" y="279" width="302" height="40"/>
+                                <rect key="frame" x="63" y="279" width="788" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -68,7 +99,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNj-ZH-Rch">
-                                <rect key="frame" x="315" y="636" width="50" height="50"/>
+                                <rect key="frame" x="801" y="636" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="V1q-uu-FoE"/>
@@ -81,7 +112,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-GW-K0L">
-                                <rect key="frame" x="262" y="636" width="26" height="50"/>
+                                <rect key="frame" x="262" y="636" width="512" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="98T-eG-kPI"/>
@@ -817,7 +848,7 @@
                         </imageView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="UIj-3v-EbN"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstItem="a2a-y5-E1c" firstAttribute="top" secondItem="UIj-3v-EbN" secondAttribute="top" constant="150" id="WuP-el-MPs"/>
                         <constraint firstItem="v5c-u8-BPC" firstAttribute="top" secondItem="a2a-y5-E1c" secondAttribute="bottom" constant="8" symbolic="YES" id="qRe-9z-QFM"/>
@@ -1169,6 +1200,9 @@
         <image name="write.png" width="384" height="384"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
