@@ -8,9 +8,7 @@
 import Foundation
 import UIKit
 
-class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-    
-    var imageArray = [UIImage(named: "clothing"),UIImage(named: "entertainment"),UIImage(named: "food"),UIImage(named: "utilities"),UIImage(named: "transport"),UIImage(named: "uncategorized")]
+class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     var textArray = ["Clothing", "Entertainment", "Food", "Utilities", "Transport", "Uncategorized"]
     
@@ -19,12 +17,12 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArray.count
+        return textArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        cell.catImage.image = imageArray[indexPath.row]
+        cell.catImage.image = UIImage(named: textArray[indexPath.row])
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.backgroundColor = UIColor.white.cgColor
@@ -40,8 +38,13 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.notestxt.delegate = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
 
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var notestxt: UITextField!
@@ -58,17 +61,6 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
             alert("Please fill up the following details")
         }
         else{
-            var i = 0
-            
-            //To find index of category in array
-            for d in textArray
-            {
-                i += 1
-                if d == categoryField.text
-                {
-                    break // var i will stop increasing
-                }
-            }
             
             let price = Double(pricetxt.text!)
             
@@ -81,19 +73,10 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
             else{
                 //Creating Transaction Object & add into core data
                 let controller = TransactionController()
-                let tlist = controller.FetchTransactionData()
-                var id = 1
-                if (tlist?.count != nil)
-                {
-                    id = tlist!.count + 1
-                }
-                else
-                {
-                    id = 1
-                }
-                let transaction = Transaction(id: id, image: imageArray[i]! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
+                let id = controller.GetLatestTransactionId()
+                let transaction = Transaction(id: id, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
+                
                 controller.AddTransactionData(t: transaction)
-                print(id)
                 
                 //return back to Home viewController
                 self.navigationController?.popViewController(animated: true)

@@ -38,6 +38,18 @@ class TransactionDetailsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func editBtn(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "EditTransactionViewController") as? EditTransactionViewController
+        vc?.tid = Int32(tid)!
+        vc?.tImage = tImage
+        vc?.tNotes = tNotes
+        vc?.tTitle = tTitle
+        vc?.tPrice = Double(dblPrice)!
+        vc?.type = type
+        //vc?.tDate = obj.datetime
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
     var tid = ""
     var tImage = UIImage()
     var tNotes = ""
@@ -45,6 +57,7 @@ class TransactionDetailsViewController: UIViewController {
     var tPrice = ""
     var tDate = ""
     var type = ""
+    var dblPrice = ""
     
     
 }

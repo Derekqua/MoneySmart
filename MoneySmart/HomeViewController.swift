@@ -33,6 +33,9 @@ class HomeViewController: UIViewController{
         
         //fetch data
         fetchData()
+        
+        //fetch balance
+        balanceText.text = "$" + fetchBal()
 
     }
     
@@ -44,6 +47,13 @@ class HomeViewController: UIViewController{
                 self.viewtbl.reloadData()
             }
         }
+    }
+    
+    
+    //fetch balance
+    func fetchBal()->String{
+        let b = String(format: "%.2f", controller.getBalance())
+        return b
     }
     
     
@@ -62,7 +72,13 @@ extension HomeViewController: UITableViewDelegate
         vc?.tImage = obj.image
         vc?.tNotes = obj.notes
         vc?.tTitle = obj.title
-        vc?.tPrice = String(obj.price)
+        vc?.dblPrice = String(obj.price) //string price without formatting
+        if obj.type == "Income"{
+            vc?.tPrice = "+" + String(format: "%.2f",obj.price) + " SGD"
+        }
+        else{
+            vc?.tPrice = "-" + String(format: "%.2f",obj.price) + " SGD"
+        }
         vc?.type = obj.type
         
         //Date formatting
@@ -101,7 +117,13 @@ extension HomeViewController: UITableViewDataSource
         cell.catImageView?.image = tObj.image
         cell.title?.text = tObj.title
         cell.notes?.text = tObj.notes
-        cell.price?.text = String(tObj.price)
+        if tObj.type == "Income"{
+            cell.price?.text = "+" + String(format: "%.2f",tObj.price) + " SGD"
+        }
+        else{
+            cell.price?.text = "-" + String(format: "%.2f",tObj.price) + " SGD"
+        }
+        
         
         //Date formatting
         let dateFormatter = DateFormatter()

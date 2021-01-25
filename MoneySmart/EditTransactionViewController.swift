@@ -1,14 +1,22 @@
 //
-//  ExpensesViewController.swift
+//  EditTransactionViewController.swift
 //  MoneySmart
 //
-//  Created by Derek Qua on 20/1/21.
+//  Created by Derek Qua on 24/1/21.
 //
 
 import Foundation
-import UIKit
+import  UIKit
 
-class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+class EditTransactionViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+    
+    var tid:Int32 = 0
+    var tImage = UIImage()
+    var tNotes = ""
+    var tTitle = ""
+    var tPrice = 0.00
+    var tDate = ""
+    var type = ""
     
     var textArray = ["Clothing", "Entertainment", "Food", "Utilities", "Transport", "Uncategorized"]
     
@@ -22,7 +30,7 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
-        cell.catImage2.image = UIImage(named: textArray[indexPath.row])
+        cell.catImage.image = UIImage(named: textArray[indexPath.row])
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.backgroundColor = UIColor.white.cgColor
@@ -35,6 +43,20 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
         categoryField.text = textArray[indexPath.row]
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        categoryField.text = tTitle
+        pricetxt.text = String(tPrice)
+        notestxt.text = tNotes
+        
+        self.notestxt.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
 
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var notestxt: UITextField!
@@ -63,10 +85,11 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
             else{
                 //Creating Transaction Object & add into core data
                 let controller = TransactionController()
-                let id = controller.GetLatestTransactionId()
-                let transaction = Transaction(id: id, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Expenses")
+                //let id = controller.GetLatestTransactionId()
+                let transaction = Transaction(id: tid, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: type)
                 
-                controller.AddTransactionData(t: transaction)
+                controller.UpdateTransaction(t: transaction)
+                //controller.AddTransactionData(t: transaction)
                 
                 //return back to Home viewController
                 self.navigationController?.popViewController(animated: true)
@@ -89,22 +112,9 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
             
             self.present(alert, animated: true, completion: nil)
             
-        }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        tabBarController?.parent?.tabBarController?.tabBar.isHidden = true
-        self.notestxt.delegate = self
-        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return false
-        }
-
-  
+    
+    
 }
 

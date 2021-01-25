@@ -25,6 +25,7 @@
 		400180C325B9A4CD00501B64 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400180C125B9A4CD00501B64 /* HomeTableViewCell.swift */; };
 		400180C425B9A4CD00501B64 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400180C225B9A4CD00501B64 /* HomeTableViewCell.xib */; };
 		400180C725B9AFD400501B64 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */; };
+		400180D525BD91F000501B64 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400180D425BD91F000501B64 /* EditTransactionViewController.swift */; };
 		402A662A25B7019900BAA486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402A662925B7019900BAA486 /* LaunchScreen.storyboard */; };
 		402A663025B7029A00BAA486 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 402A662F25B7029A00BAA486 /* moneysmartround.png */; };
 		402A663425B7060400BAA486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663325B7060400BAA486 /* HomeViewController.swift */; };
@@ -41,7 +42,7 @@
 		40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5425B681F1008E1A0C /* ViewController.swift */; };
 		40BB5D5825B681F1008E1A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5625B681F1008E1A0C /* Main.storyboard */; };
 		40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */; };
-		40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* Assets.xcassets */; };
+		40BB5D5D25B681F2008E1A0C /* pencil.png.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		400180C125B9A4CD00501B64 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		400180C225B9A4CD00501B64 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
+		400180D425BD91F000501B64 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
 		402A662925B7019900BAA486 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		402A662F25B7029A00BAA486 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneysmartround.png; sourceTree = "<group>"; };
 		402A663325B7060400BAA486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -80,7 +82,7 @@
 		40BB5D5425B681F1008E1A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40BB5D5725B681F1008E1A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40BB5D5A25B681F1008E1A0C /* MoneySmart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoneySmart.xcdatamodel; sourceTree = "<group>"; };
-		40BB5D5C25B681F2008E1A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = pencil.png.xcassets; sourceTree = "<group>"; };
 		40BB5D6125B681F2008E1A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */,
 				40BB5D5425B681F1008E1A0C /* ViewController.swift */,
 				40BB5D5625B681F1008E1A0C /* Main.storyboard */,
+				400180D425BD91F000501B64 /* EditTransactionViewController.swift */,
 				400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */,
 				400180C125B9A4CD00501B64 /* HomeTableViewCell.swift */,
 				400180C225B9A4CD00501B64 /* HomeTableViewCell.xib */,
@@ -153,7 +156,7 @@
 				402A663325B7060400BAA486 /* HomeViewController.swift */,
 				402A664A25B714F300BAA486 /* CustomTableViewCell.swift */,
 				402A662925B7019900BAA486 /* LaunchScreen.storyboard */,
-				40BB5D5C25B681F2008E1A0C /* Assets.xcassets */,
+				40BB5D5C25B681F2008E1A0C /* pencil.png.xcassets */,
 				40BB5D6125B681F2008E1A0C /* Info.plist */,
 				40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */,
 				4038EC6725B7D5F60039034C /* TransactionController.swift */,
@@ -231,7 +234,7 @@
 				4001808E25B7EB1500501B64 /* transport.png in Resources */,
 				4001808C25B7EB1500501B64 /* utilities.png in Resources */,
 				400180C425B9A4CD00501B64 /* HomeTableViewCell.xib in Resources */,
-				40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */,
+				40BB5D5D25B681F2008E1A0C /* pencil.png.xcassets in Resources */,
 				4001808925B7EB1500501B64 /* clothing.png in Resources */,
 				4001808F25B7EB1500501B64 /* entertainment.png in Resources */,
 				4001809125B7EB1500501B64 /* food.png in Resources */,
@@ -261,6 +264,7 @@
 				40BB5D5125B681F1008E1A0C /* AppDelegate.swift in Sources */,
 				402A663725B7066400BAA486 /* AnalysisViewController.swift in Sources */,
 				40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */,
+				400180D525BD91F000501B64 /* EditTransactionViewController.swift in Sources */,
 				40BB5D5325B681F1008E1A0C /* SceneDelegate.swift in Sources */,
 				400180C325B9A4CD00501B64 /* HomeTableViewCell.swift in Sources */,
 				402A664125B7073900BAA486 /* Transaction.swift in Sources */,
