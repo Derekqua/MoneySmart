@@ -1,0 +1,6 @@
+framework module Pods_MoneySmart {
+  umbrella header "Pods-MoneySmart-umbrella.h"
+
+  export *
+  module * { export * }
+}
