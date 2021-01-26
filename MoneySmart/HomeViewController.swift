@@ -91,6 +91,7 @@ extension HomeViewController: UITableViewDelegate
         let newDate = dateFormatter.string(from: date) // 31 December
         
         vc?.tDate = newDate
+        vc?.realDate = obj.datetime
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }

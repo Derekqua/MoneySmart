@@ -17,6 +17,7 @@ class EditTransactionViewController: UIViewController,UICollectionViewDelegate,U
     var tPrice = 0.00
     var tDate = ""
     var type = ""
+    var realDate = Date()
     
     var textArray = ["Clothing", "Entertainment", "Food", "Utilities", "Transport", "Uncategorized"]
     
@@ -86,7 +87,7 @@ class EditTransactionViewController: UIViewController,UICollectionViewDelegate,U
                 //Creating Transaction Object & add into core data
                 let controller = TransactionController()
                 //let id = controller.GetLatestTransactionId()
-                let transaction = Transaction(id: tid, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: type)
+                let transaction = Transaction(id: tid, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: realDate, type: type)
                 
                 controller.UpdateTransaction(t: transaction)
                 //controller.AddTransactionData(t: transaction)

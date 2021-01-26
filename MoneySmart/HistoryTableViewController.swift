@@ -165,6 +165,7 @@ class HistoryTableViewController:UITableViewController, UISearchBarDelegate{
         vc?.tImage = obj.image
         vc?.tNotes = obj.notes
         vc?.tTitle = obj.title
+        vc?.dblPrice = String(obj.price) //string price without formatting
         if obj.type == "Income"{
             vc?.tPrice = "+" + String(format: "%.2f",obj.price) + " SGD"
         }
@@ -183,6 +184,7 @@ class HistoryTableViewController:UITableViewController, UISearchBarDelegate{
         let newDate = dateFormatter.string(from: date) // 31 December
         
         vc?.tDate = newDate
+        vc?.realDate = obj.datetime
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -211,7 +213,7 @@ class HistoryTableViewController:UITableViewController, UISearchBarDelegate{
             vc?.tTitle = obj.title
             vc?.tPrice = obj.price
             vc?.type = obj.type
-            //vc?.tDate = obj.datetime
+            vc?.realDate = obj.datetime
             
             self.navigationController?.pushViewController(vc!, animated: true)
         }

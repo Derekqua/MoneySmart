@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		400180C425B9A4CD00501B64 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 400180C225B9A4CD00501B64 /* HomeTableViewCell.xib */; };
 		400180C725B9AFD400501B64 /* TransactionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */; };
 		400180D525BD91F000501B64 /* EditTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400180D425BD91F000501B64 /* EditTransactionViewController.swift */; };
+		400180FD25C008E500501B64 /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 400180FC25C008E500501B64 /* CHCSVParser.m */; };
+		4001810D25C0445400501B64 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4001810C25C0445400501B64 /* CurrencyViewController.swift */; };
 		402A662A25B7019900BAA486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402A662925B7019900BAA486 /* LaunchScreen.storyboard */; };
 		402A663025B7029A00BAA486 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 402A662F25B7029A00BAA486 /* moneysmartround.png */; };
 		402A663425B7060400BAA486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663325B7060400BAA486 /* HomeViewController.swift */; };
@@ -66,6 +68,10 @@
 		400180C225B9A4CD00501B64 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsViewController.swift; sourceTree = "<group>"; };
 		400180D425BD91F000501B64 /* EditTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionViewController.swift; sourceTree = "<group>"; };
+		400180FA25C008E400501B64 /* MoneySmart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoneySmart-Bridging-Header.h"; sourceTree = "<group>"; };
+		400180FB25C008E500501B64 /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
+		400180FC25C008E500501B64 /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		4001810C25C0445400501B64 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		402A662925B7019900BAA486 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		402A662F25B7029A00BAA486 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneysmartround.png; sourceTree = "<group>"; };
 		402A663325B7060400BAA486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -133,11 +139,14 @@
 		40BB5D4425B681F1008E1A0C = {
 			isa = PBXGroup;
 			children = (
+				400180FB25C008E500501B64 /* CHCSVParser.h */,
+				400180FC25C008E500501B64 /* CHCSVParser.m */,
 				4038EC6F25B7E5200039034C /* Images */,
 				40BB5D4F25B681F1008E1A0C /* MoneySmart */,
 				40BB5D4E25B681F1008E1A0C /* Products */,
 				812B2307AD0CCEC4184A1263 /* Pods */,
 				3F4621064041629FF1E0E849 /* Frameworks */,
+				400180FA25C008E400501B64 /* MoneySmart-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +165,7 @@
 				40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */,
 				40BB5D5425B681F1008E1A0C /* ViewController.swift */,
 				40BB5D5625B681F1008E1A0C /* Main.storyboard */,
+				4001810C25C0445400501B64 /* CurrencyViewController.swift */,
 				400180D425BD91F000501B64 /* EditTransactionViewController.swift */,
 				400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */,
 				400180C125B9A4CD00501B64 /* HomeTableViewCell.swift */,
@@ -186,7 +196,6 @@
 				6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */,
 				912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -223,6 +232,7 @@
 				TargetAttributes = {
 					40BB5D4C25B681F1008E1A0C = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -326,7 +336,9 @@
 				400180A425B85AC100501B64 /* OcrViewController.swift in Sources */,
 				4038EC6125B7C1C20039034C /* IncomeViewController.swift in Sources */,
 				40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */,
+				400180FD25C008E500501B64 /* CHCSVParser.m in Sources */,
 				400180BB25B9942900501B64 /* HistoryTableViewController.swift in Sources */,
+				4001810D25C0445400501B64 /* CurrencyViewController.swift in Sources */,
 				4038EC6825B7D5F60039034C /* TransactionController.swift in Sources */,
 				400180C725B9AFD400501B64 /* TransactionDetailsViewController.swift in Sources */,
 				402A663E25B706D400BAA486 /* SettingViewController.swift in Sources */,
@@ -476,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P35KCUPS75;
 				INFOPLIST_FILE = MoneySmart/Info.plist;
@@ -485,6 +498,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.MoneySmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoneySmart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P35KCUPS75;
 				INFOPLIST_FILE = MoneySmart/Info.plist;
@@ -505,6 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sg.mad2.MoneySmart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MoneySmart-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

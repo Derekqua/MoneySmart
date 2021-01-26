@@ -46,7 +46,7 @@ class TransactionDetailsViewController: UIViewController {
         vc?.tTitle = tTitle
         vc?.tPrice = Double(dblPrice)!
         vc?.type = type
-        //vc?.tDate = obj.datetime
+        vc?.realDate = realDate
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -58,6 +58,7 @@ class TransactionDetailsViewController: UIViewController {
     var tDate = ""
     var type = ""
     var dblPrice = ""
+    var realDate = Date()
     
     
 }
