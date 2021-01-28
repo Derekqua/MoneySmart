@@ -71,8 +71,8 @@ class TransactionController {
                 
                 let newimage = UIImage(data: image as! Data)
                 
-                //let t1 = Transaction(id: id!, image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
-                //hList.append(t1)
+                let t1 = Transaction(id: id!, image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
+                hList.append(t1)
             }
             try context.save()
         }catch let error as NSError{
