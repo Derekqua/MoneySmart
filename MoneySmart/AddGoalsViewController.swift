@@ -1,14 +1,14 @@
 //
-//  IncomeViewController.swift
+//  AddGoalsViewController.swift
 //  MoneySmart
 //
-//  Created by Derek Qua on 20/1/21.
+//  Created by brandon on 27/1/21.
 //
 
 import Foundation
 import UIKit
 
-class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
+class AddGoalsViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, UITextFieldDelegate {
     
     var textArray = ["Clothing", "Entertainment", "Food", "Utilities", "Transport", "Uncategorized"]
     
@@ -50,6 +50,7 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var notestxt: UITextField!
     @IBOutlet weak var pricetxt: UITextField!
+    @IBOutlet weak var deadlinetxt: UIDatePicker!
     
     @IBAction func cancelbtn(_ sender: Any) {
         //return back to Home viewController
@@ -72,12 +73,16 @@ class IncomeViewController: UIViewController,UICollectionViewDelegate,UICollecti
                 
             }
             else{
-                //Creating Transaction Object & add into core data
-                let controller = TransactionController()
-                let id = controller.GetLatestTransactionId()
-                let transaction = Transaction(id: id, image: UIImage(named: categoryField.text!)! , title: categoryField.text! , notes: notestxt.text!, price: price!, datetime: Date(), type: "Income")
                 
-                controller.AddTransactionData(t: transaction)
+                
+                //Creating Transaction Object & add into core data
+                let controller = GoalController()
+                let id = controller.GetLatestGoalId()
+                let goal = Goal(id: id, image: UIImage(named: categoryField.text!)!, goal: notestxt.text!, price: price!, deadline: deadlinetxt.date, title: categoryField.text! )
+                
+                
+                controller.AddGoalData(g: goal)
+                print(goal.title)
                 
                 //return back to Home viewController
                 self.navigationController?.popViewController(animated: true)

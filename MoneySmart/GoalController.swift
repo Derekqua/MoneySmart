@@ -1,15 +1,15 @@
 //
-//  TransactionController.swift
+//  GoalController.swift
 //  MoneySmart
 //
-//  Created by Derek Qua on 20/1/21.
+//  Created by brandon on 27/1/21.
 //
 
 import Foundation
 import CoreData
 import UIKit
 
-class TransactionController {
+class GoalController {
     
     var appDelegate:AppDelegate
     let context:NSManagedObjectContext
@@ -23,12 +23,12 @@ class TransactionController {
         context = appDelegate.persistentContainer.viewContext
     }
     
-    func TransactionDataExist()->Bool {
+    func GoalDataExist()->Bool {
         var result = false
         //check the Core Data if any data exists.
         var hList:[NSManagedObject] = []
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Goal")
         
         do{
             hList = try context.fetch(fetchRequest)
@@ -48,31 +48,30 @@ class TransactionController {
         return result
     }
     
-    func FetchTransactionData()->[Transaction]? {
-        var hList:[Transaction] = []
-        var transaction:[NSManagedObject] = []
+    func FetchGoalData()->[Goal]? {
+        var hList:[Goal] = []
+        var goal:[NSManagedObject] = []
         print("test")
         
         //fetch all data in the Core Data and convert the data to hlist
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Goal")
         
         do{
-            transaction = try context.fetch(fetchRequest)
+            goal = try context.fetch(fetchRequest)
             
-            for c in transaction{
+            for c in goal{
                 let id = c.value(forKey: "cd_id") as? Int32
-                let datetime = c.value(forKey: "cd_datetime") as? Date
-                let title = c.value(forKey: "cd_title") as? String
-                let notes = c.value(forKey: "cd_notes") as? String
+                let deadline = c.value(forKey: "cd_deadline") as? Date
+                let goal = c.value(forKey: "cd_goal") as? String
                 let price = c.value(forKey: "cd_price") as? Double
-                let type = c.value(forKey: "cd_type") as? String
                 let image = c.value(forKey: "cd_image")
+                let title = c.value(forKey: "cd_title")
                 
                 let newimage = UIImage(data: image as! Data)
                 
-                //let t1 = Transaction(id: id!, image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
-                //hList.append(t1)
+                let t1 = Goal(id: id!, image: newimage!, goal: goal!, price: price!, deadline: deadline!, title: title! as! String)
+                hList.append(t1)
             }
             try context.save()
         }catch let error as NSError{
@@ -84,29 +83,24 @@ class TransactionController {
         return hList
     }
     
-    func AddTransactionData(t:Transaction){
+    func AddGoalData(g:Goal){
         //takes in a transaction object and write to the Core Data
         
-        let entity = NSEntityDescription.entity(forEntityName: "CD_Transaction", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName: "CD_Goal", in: context)!
         
-        let transaction = NSManagedObject(entity: entity, insertInto: context)
-        transaction.setValue(t.id, forKey: "cd_id")
-        transaction.setValue(t.title, forKey: "cd_title")
-        transaction.setValue(t.notes, forKey: "cd_notes")
-        transaction.setValue(t.datetime, forKey: "cd_datetime")
-        transaction.setValue(t.price, forKey: "cd_price")
-        let imageData = t.image.pngData();
-        transaction.setValue(imageData, forKey: "cd_image")
-        transaction.setValue(t.type, forKey: "cd_type")
+        let goal = NSManagedObject(entity: entity, insertInto: context)
+        goal.setValue(g.id, forKey: "cd_id")
+        goal.setValue(g.goal, forKey: "cd_goal")
+        goal.setValue(g.deadline, forKey: "cd_deadline")
+        goal.setValue(g.price, forKey: "cd_price")
+        let imageData = g.image.pngData();
+        goal.setValue(imageData, forKey: "cd_image")
+        goal.setValue(g.title, forKey: "cd_title")
         
         //updating balance into coredata
         var price:Double
-        if t.type == "Income"{
-            price = t.price
-        }
-        else{
-            price = -t.price
-        }
+        price = g.price
+        
         updateBalance(bal: price)
         
         do{
@@ -118,9 +112,9 @@ class TransactionController {
         
     }
     
-    func DeleteTransaction(id:String){
+    func DeleteGoal(id:String){
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Goal")
         fetchRequest.predicate = NSPredicate(format: "cd_id == %@", id)
         
         do {
@@ -131,8 +125,7 @@ class TransactionController {
             
             //delete balance
             let price = objecToDelete.value(forKey: "cd_price") as? Double
-            let type = (objecToDelete.value(forKey: "cd_type") as? String)!
-            deleteBalance(price: price!, type: type)
+            deleteBalance(price: price!)
             
             do {
                 try context.save()
@@ -145,16 +138,16 @@ class TransactionController {
         }
     }
     
-    func DeleteAllTransaction(){
+    func DeleteAllGoal(){
         
-        var transaction:[NSManagedObject] = []
+        var goal:[NSManagedObject] = []
 
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Goal")
         
         do{
-            transaction = try context.fetch(fetchRequest)
+            goal = try context.fetch(fetchRequest)
             
-            for i in transaction{
+            for i in goal{
                 context.delete(i)
             }
             
@@ -172,9 +165,9 @@ class TransactionController {
         }
     }
     
-    func UpdateTransaction(t:Transaction){
+    func UpdateGoal(t:Goal){
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Goal")
         fetchRequest.predicate = NSPredicate(format: "cd_id == %@", String(t.id))
         
         do {
@@ -184,23 +177,19 @@ class TransactionController {
             let oldPrice = objecToUpdate.value(forKey: "cd_price") as! Double //old balance before update
             
             objecToUpdate.setValue(t.id, forKey: "cd_id")
-            objecToUpdate.setValue(t.title, forKey: "cd_title")
-            objecToUpdate.setValue(t.notes, forKey: "cd_notes")
-            objecToUpdate.setValue(t.datetime, forKey: "cd_datetime")
+            objecToUpdate.setValue(t.goal, forKey: "cd_goal")
+            objecToUpdate.setValue(t.deadline, forKey: "cd_deadline")
             objecToUpdate.setValue(t.price, forKey: "cd_price")
             let imageData = t.image.pngData();
             objecToUpdate.setValue(imageData, forKey: "cd_image")
-            objecToUpdate.setValue(t.type, forKey: "cd_type")
+            objecToUpdate.setValue(t.title, forKey: "cd_title")
             
             //update balance
             //updating balance into coredata
             var price:Double
-            if t.type == "Income"{
-                price = t.price - oldPrice
-            }
-            else{
-                price = -(t.price - oldPrice)
-            }
+            price = t.price - oldPrice
+            
+            
             
             updateBalance(bal: price)
             
@@ -217,23 +206,23 @@ class TransactionController {
     
     
     
-    func GetLatestTransactionId()-> Int32 {
+    func GetLatestGoalId()-> Int32 {
         
         var id:Int32 = 1
-        var transaction:[NSManagedObject] = []
+        var goal:[NSManagedObject] = []
         
         
         //fetch all data in the Core Data and convert the data to hlist
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Transaction")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Goal")
         
         do{
-            transaction = try context.fetch(fetchRequest)
-            if transaction.last == nil{
+            goal = try context.fetch(fetchRequest)
+            if goal.last == nil{
                 id = 1
             }
             else{
-                let latest = transaction.last
+                let latest = goal.last
                 id = (latest!.value(forKey: "cd_id") as? Int32)! + 1
             }
             
@@ -251,22 +240,22 @@ class TransactionController {
     
     func updateBalance(bal:Double) {
 
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CD_Balance")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CD_GoalAmount")
                 
         do {
             
-            let transaction = try context.fetch(fetchRequest)
+            let goal = try context.fetch(fetchRequest)
             
-            if transaction.first == nil{
-                let entity = NSEntityDescription.entity(forEntityName: "CD_Balance", in: context)!
+            if goal.first == nil{
+                let entity = NSEntityDescription.entity(forEntityName: "CD_GoalAmount", in: context)!
                 let t = NSManagedObject(entity: entity, insertInto: context)
-                t.setValue(bal, forKey: "cd_balance")
+                t.setValue(bal, forKey: "cd_goalamount")
             }
             else{
-                let objectUpdate = transaction[0] as! NSManagedObject
-                let oldBal = objectUpdate.value(forKey: "cd_balance") as! Double
+                let objectUpdate = goal[0] as! NSManagedObject
+                let oldBal = objectUpdate.value(forKey: "cd_goalamount") as! Double
                 let sum = oldBal + bal
-                objectUpdate.setValue(sum, forKey: "cd_balance")
+                objectUpdate.setValue(sum, forKey: "cd_goalamount")
 
             }
             
@@ -282,12 +271,12 @@ class TransactionController {
         }
     }
     
-    func getBalance()->Double {
+    func getAmount()->Double {
         
         var b:Double = 0
         //fetch all data in the Core Data and convert the data to hlist
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Balance")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_GoalAmount")
         
         do{
             let balance = try context.fetch(fetchRequest)
@@ -296,7 +285,7 @@ class TransactionController {
                 b = 0
             }
             else{
-                b = (balance.first!.value(forKey: "cd_balance") as? Double)!
+                b = (balance.first!.value(forKey: "cd_goalamount") as? Double)!
             }
             
             do {
@@ -313,25 +302,23 @@ class TransactionController {
         return b
     }
     
-    func deleteBalance(price: Double, type:String)->Double {
+    func deleteBalance(price: Double)->Double {
         
         var b:Double = 0
         //fetch all data in the Core Data and convert the data to hlist
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_Balance")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CD_GoalAmount")
         
         do{
             let balance = try context.fetch(fetchRequest)
 
             let objectUpdate = balance.first!
-            b = (objectUpdate.value(forKey: "cd_balance") as? Double)!
-            if type == "Income"{
-                b -= price
-            }
-            else{
-                b += price
-            }
-            objectUpdate.setValue(b, forKey: "cd_balance")
+            b = (objectUpdate.value(forKey: "cd_goalamount") as? Double)!
+            
+            b -= price
+            
+           
+            objectUpdate.setValue(b, forKey: "cd_goalamount")
             
 
             do {
@@ -350,14 +337,14 @@ class TransactionController {
     
     func resetBalance() {
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CD_Balance")
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: "CD_GoalAmount")
                 
         do {
             
-            let transaction = try context.fetch(fetchRequest)
+            let goal = try context.fetch(fetchRequest)
             
-            if transaction.first != nil {
-                let objectUpdate = transaction[0] as! NSManagedObject
+            if goal.first != nil {
+                let objectUpdate = goal[0] as! NSManagedObject
                 context.delete(objectUpdate)
             }
             

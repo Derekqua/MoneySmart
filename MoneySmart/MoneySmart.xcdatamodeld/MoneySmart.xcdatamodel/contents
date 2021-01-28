@@ -3,6 +3,17 @@
     <entity name="CD_Balance" representedClassName="CD_Balance" syncable="YES" codeGenerationType="class">
         <attribute name="cd_balance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="CD_Goal" representedClassName="CD_Goal" syncable="YES" codeGenerationType="class">
+        <attribute name="cd_deadline" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cd_goal" optional="YES" attributeType="String"/>
+        <attribute name="cd_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cd_image" optional="YES" attributeType="Binary"/>
+        <attribute name="cd_price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="cd_title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CD_GoalAmount" representedClassName="CD_GoalAmount" syncable="YES" codeGenerationType="class">
+        <attribute name="cd_goalamount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="CD_Transaction" representedClassName="CD_Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="cd_datetime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="cd_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -15,5 +26,7 @@
     <elements>
         <element name="CD_Balance" positionX="-54" positionY="27" width="128" height="58"/>
         <element name="CD_Transaction" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="CD_Goal" positionX="-54" positionY="36" width="128" height="133"/>
+        <element name="CD_GoalAmount" positionX="-45" positionY="54" width="128" height="58"/>
     </elements>
 </model>

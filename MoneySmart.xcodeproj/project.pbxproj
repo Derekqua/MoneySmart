@@ -33,7 +33,7 @@
 		402A663025B7029A00BAA486 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 402A662F25B7029A00BAA486 /* moneysmartround.png */; };
 		402A663425B7060400BAA486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663325B7060400BAA486 /* HomeViewController.swift */; };
 		402A663725B7066400BAA486 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663625B7066400BAA486 /* AnalysisViewController.swift */; };
-		402A663B25B706B700BAA486 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663A25B706B700BAA486 /* GoalsViewController.swift */; };
+		402A663B25B706B700BAA486 /* GoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663A25B706B700BAA486 /* GoalsTableViewController.swift */; };
 		402A663E25B706D400BAA486 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A663D25B706D400BAA486 /* SettingViewController.swift */; };
 		402A664125B7073900BAA486 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A664025B7073900BAA486 /* Transaction.swift */; };
 		402A664B25B714F300BAA486 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A664A25B714F300BAA486 /* CustomTableViewCell.swift */; };
@@ -46,6 +46,9 @@
 		40BB5D5825B681F1008E1A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5625B681F1008E1A0C /* Main.storyboard */; };
 		40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */; };
 		40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* Assets.xcassets */; };
+		CA433EE725C1084300603291 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EE625C1084300603291 /* AddGoalsViewController.swift */; };
+		CA433EEA25C10AE600603291 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EE925C10AE600603291 /* Goal.swift */; };
+		CA433EEE25C10BEA00603291 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EED25C10BEA00603291 /* GoalController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +79,7 @@
 		402A662F25B7029A00BAA486 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneysmartround.png; sourceTree = "<group>"; };
 		402A663325B7060400BAA486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		402A663625B7066400BAA486 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
-		402A663A25B706B700BAA486 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		402A663A25B706B700BAA486 /* GoalsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsTableViewController.swift; sourceTree = "<group>"; };
 		402A663D25B706D400BAA486 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		402A664025B7073900BAA486 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		402A664A25B714F300BAA486 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,6 +97,9 @@
 		526E6FDB99EAC7A91FF37DE7 /* Pods_MoneySmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneySmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.debug.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.debug.xcconfig"; sourceTree = "<group>"; };
 		912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.release.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.release.xcconfig"; sourceTree = "<group>"; };
+		CA433EE625C1084300603291 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
+		CA433EE925C10AE600603291 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		CA433EED25C10BEA00603291 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +182,8 @@
 				4038EC6025B7C1C20039034C /* IncomeViewController.swift */,
 				402A664025B7073900BAA486 /* Transaction.swift */,
 				402A663D25B706D400BAA486 /* SettingViewController.swift */,
-				402A663A25B706B700BAA486 /* GoalsViewController.swift */,
+				402A663A25B706B700BAA486 /* GoalsTableViewController.swift */,
+				CA433EE625C1084300603291 /* AddGoalsViewController.swift */,
 				402A663625B7066400BAA486 /* AnalysisViewController.swift */,
 				402A663325B7060400BAA486 /* HomeViewController.swift */,
 				402A664A25B714F300BAA486 /* CustomTableViewCell.swift */,
@@ -186,6 +193,8 @@
 				40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */,
 				4038EC6725B7D5F60039034C /* TransactionController.swift */,
 				400180BA25B9942900501B64 /* HistoryTableViewController.swift */,
+				CA433EE925C10AE600603291 /* Goal.swift */,
+				CA433EED25C10BEA00603291 /* GoalController.swift */,
 			);
 			path = MoneySmart;
 			sourceTree = "<group>";
@@ -328,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402A663B25B706B700BAA486 /* GoalsViewController.swift in Sources */,
+				402A663B25B706B700BAA486 /* GoalsTableViewController.swift in Sources */,
 				4001809F25B81BBA00501B64 /* CategoryCollectionViewCell.swift in Sources */,
 				402A663425B7060400BAA486 /* HomeViewController.swift in Sources */,
 				4038EC6425B7C70E0039034C /* ExpensesViewController.swift in Sources */,
@@ -342,11 +351,14 @@
 				4038EC6825B7D5F60039034C /* TransactionController.swift in Sources */,
 				400180C725B9AFD400501B64 /* TransactionDetailsViewController.swift in Sources */,
 				402A663E25B706D400BAA486 /* SettingViewController.swift in Sources */,
+				CA433EEE25C10BEA00603291 /* GoalController.swift in Sources */,
 				40BB5D5125B681F1008E1A0C /* AppDelegate.swift in Sources */,
+				CA433EE725C1084300603291 /* AddGoalsViewController.swift in Sources */,
 				402A663725B7066400BAA486 /* AnalysisViewController.swift in Sources */,
 				40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */,
 				400180D525BD91F000501B64 /* EditTransactionViewController.swift in Sources */,
 				40BB5D5325B681F1008E1A0C /* SceneDelegate.swift in Sources */,
+				CA433EEA25C10AE600603291 /* Goal.swift in Sources */,
 				400180C325B9A4CD00501B64 /* HomeTableViewCell.swift in Sources */,
 				402A664125B7073900BAA486 /* Transaction.swift in Sources */,
 			);
