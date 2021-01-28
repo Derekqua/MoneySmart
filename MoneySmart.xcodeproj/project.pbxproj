@@ -46,6 +46,7 @@
 		40BB5D5825B681F1008E1A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5625B681F1008E1A0C /* Main.storyboard */; };
 		40BB5D5B25B681F1008E1A0C /* MoneySmart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5925B681F1008E1A0C /* MoneySmart.xcdatamodeld */; };
 		40BB5D5D25B681F2008E1A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40BB5D5C25B681F2008E1A0C /* Assets.xcassets */; };
+		CA3E641125C2E5FB00FB6FF7 /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E641025C2E5FB00FB6FF7 /* ExchangeRates.swift */; };
 		CA433EE725C1084300603291 /* AddGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EE625C1084300603291 /* AddGoalsViewController.swift */; };
 		CA433EEA25C10AE600603291 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EE925C10AE600603291 /* Goal.swift */; };
 		CA433EEE25C10BEA00603291 /* GoalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA433EED25C10BEA00603291 /* GoalController.swift */; };
@@ -97,6 +98,7 @@
 		526E6FDB99EAC7A91FF37DE7 /* Pods_MoneySmart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneySmart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD588507247327FC76F32C0 /* Pods-MoneySmart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.debug.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.debug.xcconfig"; sourceTree = "<group>"; };
 		912A7C5C9FBEF1F70407535B /* Pods-MoneySmart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySmart.release.xcconfig"; path = "Target Support Files/Pods-MoneySmart/Pods-MoneySmart.release.xcconfig"; sourceTree = "<group>"; };
+		CA3E641025C2E5FB00FB6FF7 /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		CA433EE625C1084300603291 /* AddGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGoalsViewController.swift; sourceTree = "<group>"; };
 		CA433EE925C10AE600603291 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		CA433EED25C10BEA00603291 /* GoalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				40BB5D5425B681F1008E1A0C /* ViewController.swift */,
 				40BB5D5625B681F1008E1A0C /* Main.storyboard */,
 				4001810C25C0445400501B64 /* CurrencyViewController.swift */,
+				CA3E641025C2E5FB00FB6FF7 /* ExchangeRates.swift */,
 				400180D425BD91F000501B64 /* EditTransactionViewController.swift */,
 				400180C625B9AFD400501B64 /* TransactionDetailsViewController.swift */,
 				400180C125B9A4CD00501B64 /* HomeTableViewCell.swift */,
@@ -340,6 +343,7 @@
 				402A663B25B706B700BAA486 /* GoalsTableViewController.swift in Sources */,
 				4001809F25B81BBA00501B64 /* CategoryCollectionViewCell.swift in Sources */,
 				402A663425B7060400BAA486 /* HomeViewController.swift in Sources */,
+				CA3E641125C2E5FB00FB6FF7 /* ExchangeRates.swift in Sources */,
 				4038EC6425B7C70E0039034C /* ExpensesViewController.swift in Sources */,
 				402A664B25B714F300BAA486 /* CustomTableViewCell.swift in Sources */,
 				400180A425B85AC100501B64 /* OcrViewController.swift in Sources */,
