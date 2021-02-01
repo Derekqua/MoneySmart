@@ -99,7 +99,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNj-ZH-Rch">
-                                <rect key="frame" x="339" y="636" width="26" height="50"/>
+                                <rect key="frame" x="315" y="636" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="V1q-uu-FoE"/>
@@ -112,7 +112,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-GW-K0L">
-                                <rect key="frame" x="262" y="636" width="50" height="50"/>
+                                <rect key="frame" x="262" y="636" width="26" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="98T-eG-kPI"/>
@@ -733,37 +733,32 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T81-Wg-tfH">
                                 <rect key="frame" x="10" y="98" width="370" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ebB-yw-PcH"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-5L-r4w">
-                                <rect key="frame" x="40" y="502" width="310" height="149"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="149" id="fVw-sa-m8i"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBt-5E-JXp">
+                                <rect key="frame" x="0.0" y="162" width="390" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-5L-r4w">
+                                <rect key="frame" x="115" y="375" width="173" height="94"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBt-5E-JXp">
-                                <rect key="frame" x="0.0" y="162" width="390" height="216"/>
-                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0LT-M0-OgM"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="Clh-5L-r4w" firstAttribute="centerX" secondItem="JBt-5E-JXp" secondAttribute="centerX" id="1XY-XD-kzb"/>
-                            <constraint firstItem="JBt-5E-JXp" firstAttribute="top" secondItem="T81-Wg-tfH" secondAttribute="bottom" constant="30" id="1se-Td-Oh6"/>
-                            <constraint firstItem="JBt-5E-JXp" firstAttribute="leading" secondItem="If0-OY-0xO" secondAttribute="leading" id="37J-fi-Uu4"/>
-                            <constraint firstItem="T81-Wg-tfH" firstAttribute="top" secondItem="0LT-M0-OgM" secondAttribute="top" constant="10" id="82p-ba-VtA"/>
-                            <constraint firstItem="0LT-M0-OgM" firstAttribute="trailing" secondItem="T81-Wg-tfH" secondAttribute="trailing" constant="10" id="Gbf-gt-Ao1"/>
-                            <constraint firstItem="Clh-5L-r4w" firstAttribute="leading" secondItem="0LT-M0-OgM" secondAttribute="leading" constant="40" id="ODa-ZO-xsd"/>
-                            <constraint firstItem="0LT-M0-OgM" firstAttribute="bottom" secondItem="Clh-5L-r4w" secondAttribute="bottom" constant="110" id="ObA-Qd-iR0"/>
-                            <constraint firstItem="JBt-5E-JXp" firstAttribute="centerX" secondItem="T81-Wg-tfH" secondAttribute="centerX" id="XTG-mB-ZKi"/>
-                            <constraint firstItem="T81-Wg-tfH" firstAttribute="leading" secondItem="0LT-M0-OgM" secondAttribute="leading" constant="10" id="gkN-aw-Dsc"/>
+                            <constraint firstItem="T81-Wg-tfH" firstAttribute="top" secondItem="0LT-M0-OgM" secondAttribute="top" constant="10" id="5TN-bi-o6W"/>
+                            <constraint firstItem="T81-Wg-tfH" firstAttribute="centerX" secondItem="JBt-5E-JXp" secondAttribute="centerX" id="6F7-Sv-0gr"/>
+                            <constraint firstAttribute="trailing" secondItem="JBt-5E-JXp" secondAttribute="trailing" id="Cq8-eY-InV"/>
+                            <constraint firstItem="JBt-5E-JXp" firstAttribute="top" secondItem="T81-Wg-tfH" secondAttribute="bottom" constant="30" id="HQI-mK-Vpr"/>
+                            <constraint firstItem="Clh-5L-r4w" firstAttribute="centerY" secondItem="If0-OY-0xO" secondAttribute="centerY" id="Qfw-zS-jLo"/>
+                            <constraint firstItem="0LT-M0-OgM" firstAttribute="trailing" secondItem="Clh-5L-r4w" secondAttribute="trailing" constant="102" id="RPh-eQ-NrY"/>
+                            <constraint firstItem="T81-Wg-tfH" firstAttribute="leading" secondItem="0LT-M0-OgM" secondAttribute="leading" constant="10" id="W4q-eT-dzN"/>
+                            <constraint firstItem="JBt-5E-JXp" firstAttribute="leading" secondItem="If0-OY-0xO" secondAttribute="leading" id="mjf-7k-eVV"/>
+                            <constraint firstItem="Clh-5L-r4w" firstAttribute="leading" secondItem="0LT-M0-OgM" secondAttribute="leading" constant="115" id="qa7-PX-7Zh"/>
+                            <constraint firstItem="0LT-M0-OgM" firstAttribute="bottom" secondItem="Clh-5L-r4w" secondAttribute="bottom" constant="292" id="xqv-ca-nw5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Currency" id="J1X-Th-lDf"/>
@@ -870,7 +865,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yP-7w-8nx">
-                                        <rect key="frame" x="339" y="636" width="26" height="50"/>
+                                        <rect key="frame" x="315" y="636" width="50" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="mvM-6q-O1z"/>
@@ -884,7 +879,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-P7-ela">
-                                        <rect key="frame" x="262" y="636" width="50" height="50"/>
+                                        <rect key="frame" x="262" y="636" width="26" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UVY-RA-lQ2"/>

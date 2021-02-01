@@ -29,11 +29,6 @@ class CurrencyViewController:UIViewController, UIPickerViewDelegate, UIPickerVie
         
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return false
-        }
-    
     @objc func updateViews(input:Double)
     {
         guard let amountText = money.text , let theAmountText = Double(amountText) else {return}
