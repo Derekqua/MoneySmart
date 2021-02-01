@@ -84,6 +84,43 @@ class TransactionController {
         return hList
     }
     
+    func GetTransaction(id:String)->Transaction{
+        
+        var t1:[Transaction] = []
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CD_Transaction")
+        fetchRequest.predicate = NSPredicate(format: "cd_id == %@", id)
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            let c = result[0] as! NSManagedObject
+            
+            let id = c.value(forKey: "cd_id") as? Int32
+            let datetime = c.value(forKey: "cd_datetime") as? Date
+            let title = c.value(forKey: "cd_title") as? String
+            let notes = c.value(forKey: "cd_notes") as? String
+            let price = c.value(forKey: "cd_price") as? Double
+            let type = c.value(forKey: "cd_type") as? String
+            let image = c.value(forKey: "cd_image")
+            
+            let newimage = UIImage(data: image as! Data)
+            
+            let obj = Transaction(id: id!, image: newimage!, title: title!, notes: notes!, price: price!, datetime: datetime!, type: type!)
+            t1.append(obj)
+            
+            do {
+                try context.save()
+            } catch  {
+                print(error)
+            }
+            
+        } catch  {
+            print(error)
+        }
+        
+        return t1[0]
+    }
+    
     func AddTransactionData(t:Transaction){
         //takes in a transaction object and write to the Core Data
         

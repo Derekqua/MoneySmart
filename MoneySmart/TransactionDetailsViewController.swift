@@ -24,6 +24,36 @@ class TransactionDetailsViewController: UIViewController {
         nameTxt.text = tNotes
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //get data then refresh page
+        let t1:Transaction = controller.GetTransaction(id: tid)
+        
+        titleTxt.text = t1.title
+        catImage.image = t1.image
+        tType.text = t1.type
+        nameTxt.text = t1.notes
+        
+        if t1.type == "Income"{
+            tPrice = "+" + String(format: "%.2f",t1.price) + " SGD"
+        }
+        else{
+            tPrice = "-" + String(format: "%.2f",t1.price) + " SGD"
+        }
+        priceTxt.text = tPrice
+        
+        //Date formatting
+        let dateFormatter = DateFormatter()
+        let date:Date = t1.datetime
+         
+        // British English Locale (en_GB)
+        dateFormatter.locale = Locale(identifier: "en_GB")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd") // // set template after setting locale
+        let newDate = dateFormatter.string(from: date) // 31 December
+        
+        dateTxt.text = newDate
+        
+    }
 
 
     @IBOutlet weak var titleTxt: UILabel!
