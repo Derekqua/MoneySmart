@@ -94,8 +94,6 @@ class ExpensesViewController: UIViewController,UICollectionViewDelegate,UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        tabBarController?.parent?.tabBarController?.tabBar.isHidden = true
         self.notestxt.delegate = self
         
     }

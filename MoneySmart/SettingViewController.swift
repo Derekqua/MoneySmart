@@ -13,6 +13,7 @@ import UserNotifications
 class SettingViewController: UIViewController, UIDocumentPickerDelegate {
 
     let controller = TransactionController()
+    let goal = GoalController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,6 +171,7 @@ class SettingViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func clearBtn(_ sender: Any) {
         controller.DeleteAllTransaction()
+        goal.DeleteAllGoal()
         alert("Data has been cleared")
     }
     

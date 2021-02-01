@@ -14,8 +14,10 @@ class GoalsTableViewController: UITableViewController {
     var tList:[Goal] = []
     var filterData:[Goal] = []
     
+    @IBOutlet weak var uselessText: UILabel!
     @IBOutlet weak var historytableView: UITableView!
     @IBOutlet weak var goalneeded: UILabel!
+    @IBOutlet var emptyView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,22 @@ class GoalsTableViewController: UITableViewController {
         tableView.dataSource = self
         goalneeded.text = fetchamt()
         fetchData()
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        goalneeded.text = fetchamt()
+        fetchData()
+        tableView.tableFooterView = UIView()
+        if filterData.isEmpty{
+            tableView.backgroundView = emptyView
+            uselessText.isHidden = true
+            goalneeded.isHidden = true
+        }
+        else{
+            tableView.backgroundView = UIView()
+            uselessText.isHidden = false
+            goalneeded.isHidden = false
+        }
     }
     
 
@@ -48,7 +64,8 @@ class GoalsTableViewController: UITableViewController {
     }
     
     func fetchamt()->String{
-        let b = String(format: "%.2f", controller.getAmount())
+        var b = String(format: "%.2f", controller.getAmount())
+        b = "$" + b
         return b
     }
  
@@ -74,9 +91,7 @@ class GoalsTableViewController: UITableViewController {
             cell.title?.text = tObj.title
             cell.notes?.text = tObj.goal
             cell.price?.text = "+" + String(format: "%.2f",tObj.price) + " SGD"
-        print(tObj.title)
-    
-            
+            print(tObj.title)
             
             
             //Date formatting
@@ -99,37 +114,22 @@ class GoalsTableViewController: UITableViewController {
         return 70
     }
     
-    /*override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { [self] (action, sourceView, completionHandler) in completionHandler(true)
             
             //deleting object
             let obj = self.filterData[indexPath.row]
             controller.DeleteGoal(id: String(obj.id))
             filterData.remove(at: indexPath.row)
+            goalneeded.text = fetchamt()
             self.tableView.reloadData()
         }
 
-        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in completionHandler(true)
-            
-            let vc = self.storyboard?.instantiateViewController(identifier: "EditTransactionViewController") as? EditTransactionViewController
-            let obj = self.filterData[indexPath.row]
-            vc?.tid = obj.id
-            vc?.tImage = obj.image
-            vc?.tNotes = obj.notes
-            vc?.tTitle = obj.title
-            vc?.tPrice = obj.price
-            vc?.type = obj.type
-            vc?.realDate = obj.datetime
-            
-            self.navigationController?.pushViewController(vc!, animated: true)
-        }
-    
-        edit.backgroundColor = UIColor.blue
-        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete, edit])
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
         swipeActionConfig.performsFirstActionWithFullSwipe = false
         return swipeActionConfig
 
     }
- */
+ 
 }
 
