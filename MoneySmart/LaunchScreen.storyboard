@@ -21,7 +21,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneysmartround" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-rh-cRK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneysmartround.png" translatesAutoresizingMaskIntoConstraints="NO" id="MEe-rh-cRK">
                                 <rect key="frame" x="87" y="273" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="kcS-0B-Ege"/>
@@ -52,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moneysmartround" width="500" height="500"/>
+        <image name="moneysmartround.png" width="500" height="500"/>
     </resources>
 </document>
