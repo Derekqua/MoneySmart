@@ -34,6 +34,19 @@ class GoalsTableViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //bring back parent tab bar controller
+        self.tabBarController?.tabBar.isHidden = false
+        
+        //fetch data
+        fetchData()
+        
+        //fetch balance
+        goalneeded.text = "$" + fetchamt()
+
+    }
+    
 
     //fetching data
     func fetchData() {
@@ -61,8 +74,8 @@ class GoalsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //tList = controller.FetchTransactionData()!
-        return filterData.count
+        tList = controller.FetchGoalData()!
+        return tList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,7 +112,7 @@ class GoalsTableViewController: UITableViewController {
         return 70
     }
     
-    /*override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { [self] (action, sourceView, completionHandler) in completionHandler(true)
             
             //deleting object
@@ -108,8 +121,11 @@ class GoalsTableViewController: UITableViewController {
             filterData.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
-
-        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in completionHandler(true)
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+        /*let edit = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in completionHandler(true)
             
             let vc = self.storyboard?.instantiateViewController(identifier: "EditTransactionViewController") as? EditTransactionViewController
             let obj = self.filterData[indexPath.row]

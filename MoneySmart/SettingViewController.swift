@@ -170,6 +170,9 @@ class SettingViewController: UIViewController, UIDocumentPickerDelegate {
     
     @IBAction func clearBtn(_ sender: Any) {
         controller.DeleteAllTransaction()
+        let controller2 = GoalController()
+        controller2.DeleteAllGoal()
+    
         alert("Data has been cleared")
     }
     
