@@ -19,39 +19,50 @@ class SettingViewController: UIViewController, UIDocumentPickerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    @IBAction func notificationButton(_ sender: Any) {
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
+    
+    
+    @IBAction func notify(_ sender: UISwitch)
+    {
+        if (sender.isOn == true)
+        {
+            let center = UNUserNotificationCenter.current()
+            
+            center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
+                
+            }
+            
+            //create notification content
+            let content = UNMutableNotificationContent()
+            content.title = "Hey I'm a notification!"
+            content.body = "Remember to add your expenses!"
+            
+            //create notification trigger
+            let date = Date().addingTimeInterval(10)
+            
+            let dateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            
+            //create the request
+            let uuidString = UUID().uuidString
+            
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            
+            //register notification center
+            center.add(request) { (error) in
+                //check the error paremeter and handle any errors
+                
+            }
+            
+            print("Notification success")
             
         }
-        
-        //create notification content
-        let content = UNMutableNotificationContent()
-        content.title = "Hey I'm a notification!"
-        content.body = "Remember to add your expenses!"
-        
-        //create notification trigger
-        let date = Date().addingTimeInterval(10)
-        
-        let dateComponents = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
-        //create the request
-        let uuidString = UUID().uuidString
-        
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-        
-        //register notification center
-        center.add(request) { (error) in
-            //check the error paremeter and handle any errors
-            
+        else
+        {
         }
-        
-        print("Notification success")
-        
     }
+    
+    
     
     @IBAction func exportCsv(_ sender: Any) {
         //file name
