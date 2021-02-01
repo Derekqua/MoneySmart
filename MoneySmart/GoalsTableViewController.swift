@@ -50,6 +50,19 @@ class GoalsTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        //bring back parent tab bar controller
+        self.tabBarController?.tabBar.isHidden = false
+        
+        //fetch data
+        fetchData()
+        
+        //fetch balance
+        goalneeded.text = "$" + fetchamt()
+
+    }
+    
 
     //fetching data
     func fetchData() {
@@ -78,8 +91,8 @@ class GoalsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //tList = controller.FetchTransactionData()!
-        return filterData.count
+        tList = controller.FetchGoalData()!
+        return tList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,6 +139,26 @@ class GoalsTableViewController: UITableViewController {
         }
 
         let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+        /*let edit = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in completionHandler(true)
+            
+            let vc = self.storyboard?.instantiateViewController(identifier: "EditTransactionViewController") as? EditTransactionViewController
+            let obj = self.filterData[indexPath.row]
+            vc?.tid = obj.id
+            vc?.tImage = obj.image
+            vc?.tNotes = obj.notes
+            vc?.tTitle = obj.title
+            vc?.tPrice = obj.price
+            vc?.type = obj.type
+            vc?.realDate = obj.datetime
+            
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    
+        edit.backgroundColor = UIColor.blue
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete, edit])
         swipeActionConfig.performsFirstActionWithFullSwipe = false
         return swipeActionConfig
 
