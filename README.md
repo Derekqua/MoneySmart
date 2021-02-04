@@ -1,4 +1,4 @@
-# <img src="images/moneysmartround.png" alt="Logo" width="25" height="25"> MoneySmart
+# <img src="Images/moneysmartround" alt="Logo" width="25" height="25"> MoneySmart
 <p align="center">
   <p>
       MoneySmart bring finance calculation from income, expense of future spending all to one place. Being organised is what this app is for. Easily add new items or delete with simple clicks and swipes. Calculate your expenses and show you statistic based on your monthly spending and earning. Travelling overseas? No problem, MoneySmart enables you to see the currency exchange rate simply by swiping your phone. Able to access anytime and easily data transfer from phone to phone.      <p>
@@ -9,7 +9,7 @@
       <br>
       <b>#3.</b> Edit or delete each transaction js by clicking it or swiping left
       <br>
-      <b>#4.</b>View analysis page to see a pie chart for income/expenses
+      <b>#4.</b> View analysis page to see a pie chart for income/expenses
       <br>
       <b>#5.</b> Set financial goals for yourself to motivate yourself to save money
       <br>
@@ -19,23 +19,23 @@
 
 
 ## Demo Video
-[![Demo Video](ScreenShots/poster.png)](https://youtu.be/4b8RXVa5Qx0)
+[![Demo Video](Images/moneysmartround)](https://youtu.be/4b8RXVa5Qx0)
 
 ## Screenshots
 <p align="row">
-<img src= "ScreenShots/home.PNG" width="400" height="800">
-  <img src= "ScreenShots/expense.PNG" width="400" height="800">
+<img src= "ScreenShots/home.PNG" width="400" height="600">
+  <img src= "ScreenShots/expense.PNG" width="400" height="600">
 </p>
 <p align="row">
-<img src= "ScreenShots/detail.PNG" width="400" height="800">
-  <img src= "ScreenShots/history.PNG" width="400" height="800">
+<img src= "ScreenShots/detail.PNG" width="400" height="600">
+  <img src= "ScreenShots/history.PNG" width="400" height="600">
 </p>
 <p align="row">
-<img src= "ScreenShots/analysis.PNG" width="400" height="800">
-  <img src= "ScreenShots/goal.PNG" width="400" height="800">
+<img src= "ScreenShots/analysis.PNG" width="400" height="600">
+  <img src= "ScreenShots/goal.PNG" width="400" height="600">
 </p>
 <p align="row">
-<img src= "ScreenShots/setting.PNG" width="400" height="800">
+<img src= "ScreenShots/setting.PNG" width="400" height="600">
 </p>
 
 ## Requirements
