@@ -38,7 +38,7 @@
 		4038EC6125B7C1C20039034C /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4038EC6025B7C1C20039034C /* IncomeViewController.swift */; };
 		4038EC6425B7C70E0039034C /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4038EC6325B7C70E0039034C /* ExpensesViewController.swift */; };
 		4038EC6825B7D5F60039034C /* TransactionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4038EC6725B7D5F60039034C /* TransactionController.swift */; };
-		4092B21825CB8501004B2213 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 4092B21725CB8501004B2213 /* moneysmartround.png */; };
+		4092B22225CB974C004B2213 /* moneysmartround.png in Resources */ = {isa = PBXBuildFile; fileRef = 4092B22125CB974C004B2213 /* moneysmartround.png */; };
 		40BB5D5125B681F1008E1A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5025B681F1008E1A0C /* AppDelegate.swift */; };
 		40BB5D5325B681F1008E1A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */; };
 		40BB5D5525B681F1008E1A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BB5D5425B681F1008E1A0C /* ViewController.swift */; };
@@ -84,7 +84,7 @@
 		4038EC6025B7C1C20039034C /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		4038EC6325B7C70E0039034C /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		4038EC6725B7D5F60039034C /* TransactionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionController.swift; sourceTree = "<group>"; };
-		4092B21725CB8501004B2213 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moneysmartround.png; path = ../../../moneysmartround.png; sourceTree = "<group>"; };
+		4092B22125CB974C004B2213 /* moneysmartround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moneysmartround.png; sourceTree = "<group>"; };
 		40BB5D4D25B681F1008E1A0C /* MoneySmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneySmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BB5D5025B681F1008E1A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40BB5D5225B681F1008E1A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				4001808725B7EB1500501B64 /* uncategorized.png */,
 				4001808325B7EB1500501B64 /* utilities.png */,
 				4001808425B7EB1500501B64 /* write.png */,
-				4092B21725CB8501004B2213 /* moneysmartround.png */,
+				4092B22125CB974C004B2213 /* moneysmartround.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 				4001808B25B7EB1500501B64 /* deadline.png in Resources */,
 				4001809425B809E600501B64 /* close.png in Resources */,
 				402A662A25B7019900BAA486 /* LaunchScreen.storyboard in Resources */,
-				4092B21825CB8501004B2213 /* moneysmartround.png in Resources */,
+				4092B22225CB974C004B2213 /* moneysmartround.png in Resources */,
 				4001809725B80B7600501B64 /* check.png in Resources */,
 				4001808D25B7EB1500501B64 /* write.png in Resources */,
 				4001808E25B7EB1500501B64 /* transport.png in Resources */,
