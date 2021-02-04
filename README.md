@@ -1,4 +1,4 @@
-# <img src="Images/moneysmartround" alt="Logo" width="25" height="25"> MoneySmart
+# <img src="ScreenShots/moneysmartround.png" alt="Logo" width="25" height="25"> MoneySmart
 <p align="center">
   <p>
       MoneySmart bring finance calculation from income, expense of future spending all to one place. Being organised is what this app is for. Easily add new items or delete with simple clicks and swipes. Calculate your expenses and show you statistic based on your monthly spending and earning. Travelling overseas? No problem, MoneySmart enables you to see the currency exchange rate simply by swiping your phone. Able to access anytime and easily data transfer from phone to phone.      <p>
@@ -19,7 +19,7 @@
 
 
 ## Demo Video
-[![Demo Video](Images/moneysmartround)](https://youtu.be/4b8RXVa5Qx0)
+[![Demo Video](ScreenShots/moneysmartround.png)](https://youtu.be/4b8RXVa5Qx0)
 
 ## Screenshots
 <p align="row">
