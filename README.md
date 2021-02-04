@@ -19,23 +19,23 @@
 
 
 ## Demo Video
-[![Demo Video](ScreenShots/moneysmartround.png)](https://youtu.be/4b8RXVa5Qx0)
+[![Demo Video](ScreenShots/Slide1.png)](https://youtu.be/4b8RXVa5Qx0)
 
 ## Screenshots
 <p align="row">
-<img src= "ScreenShots/home.PNG" width="400" height="600">
-  <img src= "ScreenShots/expense.PNG" width="400" height="600">
+<img src= "ScreenShots/home.PNG" width="400" height="800">
+  <img src= "ScreenShots/expense.PNG" width="400" height="800">
 </p>
 <p align="row">
-<img src= "ScreenShots/detail.PNG" width="400" height="600">
-  <img src= "ScreenShots/history.PNG" width="400" height="600">
+<img src= "ScreenShots/detail.PNG" width="400" height="800">
+  <img src= "ScreenShots/history.PNG" width="400" height="800">
 </p>
 <p align="row">
-<img src= "ScreenShots/analysis.PNG" width="400" height="600">
-  <img src= "ScreenShots/goal.PNG" width="400" height="600">
+<img src= "ScreenShots/analysis.PNG" width="400" height="800">
+  <img src= "ScreenShots/goal.PNG" width="400" height="800">
 </p>
 <p align="row">
-<img src= "ScreenShots/setting.PNG" width="400" height="600">
+<img src= "ScreenShots/setting.PNG" width="400" height="800">
 </p>
 
 ## Requirements
