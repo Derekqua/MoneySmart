@@ -1221,10 +1221,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNK-NO-fny">
-                                <rect key="frame" x="335" y="635" width="26" height="50"/>
+                                <rect key="frame" x="320" y="635" width="54" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="sUI-vv-FLh"/>
+                                    <constraint firstAttribute="width" constant="54" id="sUI-vv-FLh"/>
                                 </constraints>
                                 <state key="normal" image="check.png">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1235,7 +1235,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78r-8U-GFq">
-                                <rect key="frame" x="258" y="635" width="50" height="50"/>
+                                <rect key="frame" x="243" y="635" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bv5-gO-afL"/>
@@ -1301,7 +1301,7 @@
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="kpi-dS-yOo" firstAttribute="top" secondItem="Qa3-lf-sft" secondAttribute="top" constant="28" id="1aO-ke-0PT"/>
-                            <constraint firstItem="MLS-IG-3Qd" firstAttribute="trailing" secondItem="yNK-NO-fny" secondAttribute="trailing" id="5lq-ih-BNS"/>
+                            <constraint firstItem="MLS-IG-3Qd" firstAttribute="trailing" secondItem="yNK-NO-fny" secondAttribute="trailing" constant="-13" id="5lq-ih-BNS"/>
                             <constraint firstItem="yNK-NO-fny" firstAttribute="leading" secondItem="78r-8U-GFq" secondAttribute="trailing" constant="27" id="7hm-og-myF"/>
                             <constraint firstItem="MLS-IG-3Qd" firstAttribute="top" secondItem="Xuo-0B-6EP" secondAttribute="bottom" constant="29.333333333333343" id="Aaf-JT-uIV"/>
                             <constraint firstItem="YqZ-rW-Zyc" firstAttribute="top" secondItem="MLS-IG-3Qd" secondAttribute="top" id="BxY-4Z-mdI"/>
@@ -1319,7 +1319,7 @@
                             <constraint firstItem="Qa3-lf-sft" firstAttribute="trailing" secondItem="kpi-dS-yOo" secondAttribute="trailing" constant="29" id="gk4-nI-Wjg"/>
                             <constraint firstItem="Xuo-0B-6EP" firstAttribute="top" secondItem="kpi-dS-yOo" secondAttribute="bottom" constant="36" id="hvf-Co-EIj"/>
                             <constraint firstItem="kpi-dS-yOo" firstAttribute="leading" secondItem="YqZ-rW-Zyc" secondAttribute="leading" id="i5V-aG-5pw"/>
-                            <constraint firstItem="78r-8U-GFq" firstAttribute="leading" secondItem="Qa3-lf-sft" secondAttribute="leading" constant="258" id="iC5-4m-rc9"/>
+                            <constraint firstItem="78r-8U-GFq" firstAttribute="leading" secondItem="Qa3-lf-sft" secondAttribute="leading" constant="243" id="iC5-4m-rc9"/>
                             <constraint firstItem="YqZ-rW-Zyc" firstAttribute="leading" secondItem="jEe-He-0zm" secondAttribute="leading" id="jR5-1v-MsR"/>
                             <constraint firstItem="Xuo-0B-6EP" firstAttribute="trailing" secondItem="MLS-IG-3Qd" secondAttribute="trailing" id="n8q-aL-JYe"/>
                             <constraint firstItem="Xuo-0B-6EP" firstAttribute="leading" secondItem="MLS-IG-3Qd" secondAttribute="leading" id="p8m-QE-u5q"/>
@@ -1334,7 +1334,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5T1-6M-2qv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="-621"/>
+            <point key="canvasLocation" x="2620" y="-621.32701421800948"/>
         </scene>
         <!--AddGoal-->
         <scene sceneID="soh-L8-8ux">
@@ -1379,10 +1379,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgx-re-KaX">
-                                <rect key="frame" x="335" y="656" width="26" height="50"/>
+                                <rect key="frame" x="309" y="656" width="52" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="P5H-UQ-8DW"/>
+                                    <constraint firstAttribute="width" constant="52" id="P5H-UQ-8DW"/>
                                 </constraints>
                                 <state key="normal" image="check.png">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -1393,7 +1393,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0G-3Z-lcx">
-                                <rect key="frame" x="253" y="656" width="55" height="50"/>
+                                <rect key="frame" x="227" y="656" width="55" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="y0V-Ly-99y"/>
@@ -1491,7 +1491,7 @@
                             <constraint firstItem="ge5-tr-LH5" firstAttribute="leading" secondItem="7i5-G9-9Oe" secondAttribute="leading" constant="6" id="IoA-9V-CLW"/>
                             <constraint firstItem="PyZ-Ig-JaA" firstAttribute="leading" secondItem="7i5-G9-9Oe" secondAttribute="leading" constant="11" id="JtF-3K-oNR"/>
                             <constraint firstItem="7i5-G9-9Oe" firstAttribute="trailing" secondItem="yfe-Kw-ap6" secondAttribute="trailing" constant="7" id="LYo-t1-iqh"/>
-                            <constraint firstItem="q0G-3Z-lcx" firstAttribute="leading" secondItem="7i5-G9-9Oe" secondAttribute="leading" constant="253" id="QR1-8s-770"/>
+                            <constraint firstItem="q0G-3Z-lcx" firstAttribute="leading" secondItem="7i5-G9-9Oe" secondAttribute="leading" constant="227" id="QR1-8s-770"/>
                             <constraint firstItem="agR-q6-bK9" firstAttribute="top" secondItem="fb0-ZH-TV2" secondAttribute="bottom" constant="20.333333333333343" id="R3Z-Br-WOu"/>
                             <constraint firstItem="fb0-ZH-TV2" firstAttribute="top" secondItem="PyZ-Ig-JaA" secondAttribute="bottom" constant="33" id="RcA-SL-IeA"/>
                             <constraint firstItem="yfe-Kw-ap6" firstAttribute="top" secondItem="WBS-MC-5Sm" secondAttribute="bottom" constant="22" id="Tlk-zV-g5a"/>
